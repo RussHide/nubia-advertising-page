@@ -1,0 +1,447 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" href="img/favicon.svg" sizes="16x16">
+  <link rel="icon" href="img/iconnubia.png" type="image/x-icon"/>
+  <title>Sistema Nubia</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+      overflow-y: scroll;
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .example::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .example {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+  </style>
+</head>
+
+<body class="example">
+  <main class="font-sans bg-white" id="mainContent">
+    <!-- Header -->
+    <header id="header" class="bg-white shadow border-t-4 border-blue-500">
+      
+      <div class="w-full text-gray-700 bg-white">
+        <div x-data="{ open: false }"
+          class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+          <div class="p-4 flex flex-row items-center justify-between">
+            <a class="flex items-center text-gray-800 hover:text-indigo-600" href="#">
+              <i class="fab fa-neos text-3xl text-black "></i>
+              <span class=" font-medium text-sm md:text-base">ubia</span>
+            </a>
+            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline " @click="open = !open">
+              <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                <path x-show="!open" fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                  clip-rule="evenodd"></path>
+                <path x-show="open" fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <nav :class="{'flex': open, 'hidden': !open}"
+            class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+            <a class="flex items-center mx-2 font-semibold  text-gray-700 hover:text-indigo-600" href="#principal">
+              Principal
+            </a>
+            <a class="flex items-center mx-2 font-semibold  text-gray-700 hover:text-indigo-600" href="#funciones">
+              Funciones
+            </a>
+            <a class="flex items-center mx-2 font-semibold  text-gray-700 hover:text-indigo-600" href="#viabilidad">
+              Viabilidad
+            </a>
+            <a class="flex items-center mx-2 font-semibold  text-gray-700 hover:text-indigo-600" href="#download">
+              Descargar manual
+            </a>
+            <a class="flex items-center mx-2 font-semibold  text-gray-700 hover:text-indigo-600" href="#planes">
+              Planes
+            </a>
+            <a class="flex items-center mx-2 font-semibold  text-gray-700 hover:text-indigo-600" href="#contacto">
+              Contacto
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- Main-->
+    <section class="py-16" id="principal">
+      <div class="py-4 md:py-9 ">
+        <div class=" max-w-7xl mx-auto px-4 md:flex">
+          <!--Left Col-->
+          <div class="flex flex-col w-full md:w-1/2 justify-center items-start text-center md:text-left  invisible seRevela saleIzquierda">
+            <h1 class="my-5 text-5xl font-bold leading-tight">
+              <i class="fab fa-neos text-6xl text-black"></i>ubia, la nueva manera de organizar tu inventario
+            </h1>
+            <p class="leading-normal text-xl md:text-xl mb-8">
+              ¡Prueba gratis hoy mismo! La solución para el control de tus inventarios y almacenes.
+              Deja atras el estar antoando todo a lapiz y papel, con Nubia podras automatizar todos esos procesos tediosos al momento de ordenar tu inventario
+            </p>
+            <a href="#planes"
+              class="mx-auto lg:mx-0  bg-blue-600 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+              Ver precios
+            </a>
+          </div>
+          <!--Right Col-->
+          <div class="w-full md:w-1/2 p-6 text-center  invisible seRevela saleDerecha">
+            <img class="w-full md:ml-auto" src="img/box.svg" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Do -->
+    <section class="my-8" id="funciones">
+      <div class="container max-w-6xl mx-auto m-8">
+          <h1 class="text-3xl w-full my-2 md:text-4xl font-bold leading-tight text-center  text-gray-800 ">
+            ¿Que podras hacer aqui?
+          </h1>
+          <div class="w-full mb-8">
+            <div class="h-1 mx-auto bg-gray-500 w-64 opacity-25 my-0 py-0 rounded-t"></div>
+          </div>
+
+        <div class="md:flex md:mb-3  invisible seRevela saleDerecha">
+          <div class="w-full md:w-1/2 p-6 ">
+            <h3
+              class=" md:mt-12 text-xl md:text-3xl text-gray-800 font-bold leading-none mb-3  text-center md:text-left">
+              Tener un inventario con registros ilimitados
+            </h3>
+            <p class="text-gray-600 md:mb-8 text-center">
+              De acuerdo al plan que eligas adquirir, podras tener un numero de registros para los vales y productos de tu inventario
+            </p>
+          </div>
+          <div class="w-full md:w-1/2  p-6 pt-0">
+            <img class="h-60 w-full" src="img/insumosilimitados.svg" alt="">
+          </div>
+        </div>
+        <div class="md:flex md:mb-10 invisible seRevela saleIzquierda">
+          <div class="md:order-last w-full md:w-1/2 md:p-6 px-6 py-3">
+            <h3 class="md:mt-12 text-xl md:text-3xl text-gray-800 text-center font-bold md:text-left leading-none mb-3">
+              Ver cambios en tiempo real
+            </h3>
+            <p class="text-gray-600 md:mb-8">
+              Cada vez que un administrador haga un cambio, los demas usuarios conectados podran verlo
+            </p>
+          </div>
+          <div class="w-full md:w-1/2 p-6 md:pb-0 ">
+            <img class="h-60 w-full" src="img/tiemporeal.svg" alt="">
+          </div>
+        </div>
+        <div class="md:flex invisible seRevela saleDerecha ">
+          <div class="w-full md:w-1/2 p-6 pt-0">
+            <h3
+              class=" md:mt-12 text-xl md:text-3xl md:text-left text-gray-800 text-center font-bold leading-none mb-3">
+              Control total del administrador y usarios
+            </h3>
+            <p class="text-gray-600 md:mb-8">
+             Al ser administrador, tienes persmiso total de modificar los nombres, correo y contraseñas de los demas usuarios
+            </p>
+          </div>
+          <div class="w-full md:w-1/2 p-6">
+            <img class="h-60 w-full" src="img/controlusuarios.svg" alt="">
+          </div>
+        </div>
+        <div class="md:flex invisible seRevela saleIzquierda">
+          <div class="md:order-last w-full md:w-1/2 p-6 pt-0">
+            <h3 class="md:mt-12 text-xl md:text-3xl text-center md:text-left text-gray-800 font-bold leading-none mb-3">
+              Exportar los datos del inventario en Excel y PDF
+            </h3>
+            <p class="text-gray-600 mb-8">
+              Podras hacer un reporte de inventario de la fecha que prefieras, estos se podran exportar en formato PDF y Excel
+            </p>
+          </div>
+          <div class=" w-full md:w-1/2 p-6">
+            <img class="h-60 w-full" src="img/importar.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Why? -->
+    <section class="bg-white py-8 seRevela" id="viabilidad">
+      <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+        <h1 class="w-full my-2 text-4xl font-bold leading-tight text-center text-gray-800">
+          ¿Por que elegir Nubia?
+        </h1>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 ">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden  shadow-lg">
+            <div class="flex flex-wrap no-underline hover:no-underline">
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                Rentable
+              </div>
+              <p class="text-gray-800 text-base px-6 mb-5">
+                Al tener precios tan bajos y una gran usabilidad, es una buena opocion para tener como sistema de inventario
+              </p>
+            </div>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div class="flex items-center justify-center">
+              <button class="mx-auto lg:mx-0 hover:underline gradient font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Mas información
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 p-6">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden  shadow-lg">
+            <div class="flex flex-wrap no-underline hover:no-underline">
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                Facil de usar
+              </div>
+              <p class="text-gray-800 text-base px-6 mb-5">
+                El sistema es muy facil de usar, para todo tiene indicaciones y esta pensado para que el usaurio sepa que funcion tienen las cosas a primera vista
+              </p>
+            </div>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div class="flex items-center justify-center">
+              <button class="mx-auto lg:mx-0 hover:underline gradient  font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Mas informacion
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 ">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+            <div class="flex flex-wrap no-underline hover:no-underline">
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                Servidor siempre activo
+              </div>
+              <p class="text-gray-800 text-base px-6 mb-5">
+                Es un sistema en la web, por lo tanto esta siempre activo, no importa en que hora y en que lugar del mundo los usuarios se queiran conectar, esto siempre sera posible
+              </p>
+            </div>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div class="flex items-center justify-center">
+              <button class="mx-auto lg:mx-0 hover:underline gradient font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Mas información
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Download user manual -->
+    <section class="text-gray-600 body-font" id="download">
+      <div class="container mx-auto flex px-5 py-14 md:flex-row flex-col items-center">
+        <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 mr-16">Manual de usuario
+          </h1>
+          <p class="mb-8 leading-relaxed">Puedes descargar el manual de usuario para ver todas las funciones del programa haciendo click en el boton de abajo</p>
+          <div class="flex justify-center">
+            <a href="https://download1497.mediafire.com/899yh51hahbg/cgzgkkpkn0i0gcn/Manual+de+usuario+Sistema+Nubia.pdf" target="_blank" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-12 focus:outline-none hover:bg-indigo-600 rounded text-lg">Descargar</a>
+          </div>
+        </div>
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 flex justify-center">
+          <img class="object-cover object-center rounded h-72"  src="img/usermanual.svg" >
+        </div>
+      </div>
+    </section>
+    <!-- Price -->
+    <section class="pb-8 seRevela" id="planes">
+      <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          Planes
+        </h1>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
+          <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+              <div class="p-8 text-3xl font-bold text-center border-b-4 border-blue-400">
+                Gratis
+              </div>
+              <ul class="w-full text-center text-sm">
+                <li class="border-b py-4">1 solo usuario</li>
+                <li class="border-b py-4">Maximo de 20 insumos</li>
+                <li class="border-b py-4">Sin soporte</li>
+              </ul>
+            </div>
+            <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+              <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
+                $0
+                <span class="text-base">/1 semana</span>
+              </div>
+              <div class="flex items-center justify-center">
+                <a href="http://nubia.test" class="cursor-pointer mx-auto lg:mx-0  gradient  font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                  Iniciar plan
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
+            <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+              <div class="w-full p-8 text-3xl font-bold text-center  border-b-4 border-blue-600">Pro</div>
+              <div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
+              <ul class="w-full text-center text-base font-bold">
+                <li class="border-b py-4">Usuarios ilimitados</li>
+                <li class="border-b py-4">Sin restricciones</li>
+                <li class="border-b py-4">Asesorias gratuitas</li>
+                <li class="border-b py-4">Soporte gratuito</li>
+              </ul>
+            </div>
+            <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+              <div class="w-full pt-6 text-4xl font-bold text-center">
+                $10,000
+                <span class="text-base">/ 1 año</span>
+              </div>
+              <div class="flex items-center justify-center">
+                <a href="http://nubia.test" class="cursor-pointer mx-auto lg:mx-0  gradient  font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                  Iniciar plan
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+              <div class="p-8 text-3xl font-bold text-center border-b-4 border-blue-400">
+                Basico
+              </div>
+              <ul class="w-full text-center text-sm">
+                <li class="border-b py-4">20 usuarios</li>
+                <li class="border-b py-4">Maximo de 200 insumos</li>
+                <li class="border-b py-4">Soporte gratuito</li>
+              </ul>
+            </div>
+            <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+              <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
+                $1,500
+                <span class="text-base">/ 1 mes</span>
+              </div>
+              <div class="flex items-center justify-center">
+                <a href="http://nubia.test" class="cursor-pointer mx-auto lg:mx-0 gradient  font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                  Iniciar plan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact me -->
+    <section id="contacto" class="bg-white py-16 seRevela ">
+      <div class=" max-w-xl md:max-w-7xl px-6 mx-auto text-center">
+        <div class="text-center mb-20">
+          <h1 class="text-3xl w-full my-2 md:text-4xl font-bold leading-tight text-center  text-gray-800 ">Contacto</h1>
+          <p class="text-xl leading-relaxed  lg:w-3/4 mx-auto text-gray-500s">
+            ¿Necesitas ayuda para elegir un plan que se acomode a tus necesidades?
+          </p>
+          <div class="flex mt-6 justify-center">
+            <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+          </div>
+        </div>
+        <div class="col mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-6">
+          <!-- Whatsapp -->
+          <a href="http://wa.me/" class=" transition duration-300 ease-in-out  transform  hover:scale-110 p-4 
+            flex flex-col justify-center text-center items-center hover:bg-gray-100 shadow-xl rounded-lg 
+            ">
+            <div class="w-20 h-20 inline-flex items-center 
+            justify-center rounded-full shadow-md text-indigo-500 mb-5 flex-shrink-0">
+              <i class="fab fa-whatsapp text-5xl text-green-400"></i>
+            </div>
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Whatsapp</h2>
+
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/profile.php?id=100028087326613" class=" transition duration-300 ease-in-out  transform  hover:scale-110 p-4 
+            flex flex-col justify-center text-center items-center hover:bg-gray-100 shadow-xl rounded-lg 
+            ">
+            <div class="w-20 h-20 inline-flex items-center 
+            justify-center rounded-full shadow-md text-indigo-500 mb-5 flex-shrink-0">
+              <i class="fab fa-facebook text-5xl text-blue-400"></i>
+            </div>
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Facebook</h2>
+
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/fabiangn0/" class=" transition duration-300 ease-in-out  transform  hover:scale-110 p-4 
+            flex flex-col justify-center text-center items-center hover:bg-gray-100 shadow-xl rounded-lg 
+            ">
+            <div class="w-20 h-20 inline-flex items-center 
+            justify-center rounded-full shadow-md text-indigo-500 mb-5 flex-shrink-0">
+              <i class="fab fa-instagram text-5xl text-pink-400"></i>
+            </div>
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Instagram</h2>
+
+          </a>
+          <!-- Email -->
+          <a href="mailto: keyloggerxd25@gmail.com" class=" transition duration-300 ease-in-out  transform  hover:scale-110 p-4 
+            flex flex-col justify-center text-center items-center hover:bg-gray-100 shadow-xl rounded-lg 
+            ">
+            <div class="w-20 h-20 inline-flex items-center 
+            justify-center rounded-full shadow-md text-indigo-500 mb-5 flex-shrink-0">
+              <i class="far fa-envelope text-5xl text-gray-400"></i>
+            </div>
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Gmail</h2>
+
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-white">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div>
+            <a class="flex items-center text-gray-800 hover:text-indigo-600" href="#">
+              <i class="fab fa-neos text-3xl text-black"></i>
+              <span class=" font-medium text-sm md:text-base">ubia</span>
+            </a>
+          </div>
+          <div class="flex items-center -mx-2">
+            <a href="http://wa.me/528721398407" target="_blank"
+              class="flex items-center mx-2 text-gray-600 hover:text-green-600" href="#">
+              <i class="fab fa-whatsapp text-xl"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100028087326613" target="_blank"
+              class="flex items-center mx-2 text-gray-600 hover:text-indigo-600" href="#">
+              <i class="fab fa-facebook text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/fabiangn0/" target="_blank"
+              class="flex items-center mx-2 text-gray-600 hover:text-pink-600" href="#">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="https://github.com/RussHide" target="_blank"
+              class="flex items-center mx-2 text-gray-600 hover:text-black">
+              <i class="cursor-pointer fab fa-github text-xl "></i>
+            </a>
+            <!-- <a href="#header">
+              <i
+                class="cursor-pointer fas fa-arrow-up flex items-center mx-2 hover:text-indigo-600 text-gray-600 text-xl animate-bounce"></i>
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Up Arrow -->
+    <a href="#header" id="arrow">
+      <i class="arrow text-white  fixed cursor-pointer fas fa-arrow-up right-4 bottom-4 
+        mx-2 hover:text-blue-300  text-lg animate-bounce bg-gray-800 p-2 rounded-full"></i>
+    </a>
+  </main>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
